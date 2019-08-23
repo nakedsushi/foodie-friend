@@ -10,7 +10,7 @@
   let restaurantList;
   axios.get('https://jsonplaceholder.typicode.com/todos/1').
   then( function(response) {
-    restaurantList = response;
+    restaurantList = response.data;
   });
 
   export default {
@@ -24,7 +24,7 @@
     computed: {
       randomRestaurant() {
         const matches = [];
-
+        console.log(restaurantList);
         this.tags.forEach(() => {
           matches.push(restaurantList.filter(item => item.tags.indexOf(this.tags[0]) > - 1));
       });

@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <div class="container" v-if="!hideWelcome">
       <div class="welcome speech-bubble" >
@@ -16,11 +15,8 @@
     </div>
 
     <p class="home-links">
-      <a href="/">let's start over</a>
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
+      [footer placeholder]
     </p>
-
   </div>
 </template>
 
@@ -48,6 +44,10 @@
 </script>
 
 <style>
+  body {
+    font-family: sans-serif;
+    line-height: 1.5;
+  }
   .home-links a {
     margin-right: 1rem;
   }

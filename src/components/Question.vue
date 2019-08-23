@@ -92,7 +92,7 @@
 
 <style>
   .question {
-    margin: 40px 0;
+    margin: 80px 0;
     grid-column-start: 1;
     grid-column-end: 5;
     display: grid;
@@ -145,5 +145,6 @@
     font-size: 16px;
     font-weight: 600;
     padding: 5px 20px;
+    border: none;
   }
 </style>

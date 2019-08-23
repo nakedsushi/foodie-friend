@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Ah Goo's",
+    "hours": ["lunch", "dinner"],
+    "tags": ["dumplings", "family-style", "noodles", "chinese"]
+  },
+  {
+    "name": "Mariscos el Faro",
+    "hours": ["lunch", "dinner"],
+    "tags": ["tacos", "mexican", "seafood"]
+  }
+]
