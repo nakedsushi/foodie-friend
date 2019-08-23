@@ -37,6 +37,12 @@
 </script>
 
 <style>
+  .restaurant {
+    text-align: left;
+  }
+  .restaurant.speech-bubble {
+    padding: 10px 20px;
+  }
   .restaurant__name {
     font-weight: 600;
   }

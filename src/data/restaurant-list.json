@@ -2,12 +2,15 @@
   {
     "name": "Ah Goo's",
     "hours": ["lunch", "dinner"],
+    "cost": ["low"],
     "tags": ["dumplings", "family-style", "noodles", "chinese"],
     "summary": "It's a home-style Taiwanese restaurant that's decent.  My favorite thing there is the green onion bing, which is a carb-bomb but worth it."
   },
   {
     "name": "Mariscos el Faro",
     "hours": ["lunch", "dinner"],
-    "tags": ["tacos", "mexican", "seafood"]
+    "cost": ["low"],
+    "tags": ["tacos", "mexican", "seafood"],
+    "summary": "It's a taco truck parked in Highland Park that has a great aguachile.  It also has a seabass (lobino) tostada which isn't easy to find in LA."
   }
 ]

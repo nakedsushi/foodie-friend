@@ -5,15 +5,15 @@
     </div>
 
     <div class="choices--container">
-      <div v-for="choice in choices" class="choice" :key="choice">
+      <div v-for="choice in choices" class="choice" :key="choice.key">
         <input type="checkbox"
                :name="choice"
-               :value="choice"
-               :id="questionNumber + choice"
+               :value="choice.key || choice"
+               :id="questionNumber + (choice.key || choice)"
                v-model="selectedChoices"
                class="checkbox--hidden"
         >
-        <label v-bind:for="questionNumber + choice" class="bubble choice-bubble">{{choice}}</label>
+        <label v-bind:for="questionNumber + (choice.key || choice)" class="bubble choice-bubble">{{choice.text || choice}}</label>
       </div>
     </div>
 
@@ -61,7 +61,7 @@
         selectedChoices,
         lastQuestion,
         showAnswer,
-        showReady
+        showReady,
       }
     },
     methods: {
