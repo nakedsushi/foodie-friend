@@ -1,16 +1,20 @@
 [
   {
-    "name": "Ah Goo's",
+    "name": "Ah Goo",
     "hours": ["lunch", "dinner"],
-    "cost": ["low"],
-    "tags": ["dumplings", "family-style", "noodles", "chinese"],
+    "tags": ["low", "dumplings", "family-style", "noodles", "chinese"],
     "summary": "It's a home-style Taiwanese restaurant that's decent.  My favorite thing there is the green onion bing, which is a carb-bomb but worth it."
+  },
+  {
+    "name": "Bistro Na",
+    "hours": ["lunch", "dinner"],
+    "tags": ["high", "family-style", "noodles", "chinese"],
+    "summary": "Great ambiance and delicious Chinese food don't often go together. I guess that's why this place is so expensive. This is the place I like to take fancy out-of-town guests for Chinese food."
   },
   {
     "name": "Mariscos el Faro",
     "hours": ["lunch", "dinner"],
-    "cost": ["low"],
-    "tags": ["tacos", "mexican", "seafood"],
+    "tags": ["low", "tacos", "mexican", "seafood"],
     "summary": "It's a taco truck parked in Highland Park that has a great aguachile.  It also has a seabass (lobino) tostada which isn't easy to find in LA."
   }
 ]

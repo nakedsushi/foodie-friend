@@ -1,8 +1,13 @@
 <template>
   <div class="restaurant speech-bubble">
-    How about <span class="restaurant__name">{{ randomRestaurant.name }}</span>?
-    <br />
-    {{ randomRestaurant.summary }}
+    <div v-if="randomRestaurant">
+      How about <span class="restaurant__name">{{ randomRestaurant.name }}</span>?
+      <br />
+      {{ randomRestaurant.summary }}
+    </div>
+    <div v-else>
+      Hm...I can't really think of anything off the top of my head.
+    </div>
   </div>
 </template>
 
@@ -25,12 +30,14 @@
     computed: {
       randomRestaurant() {
         const matches = [];
-        this.tags.forEach(() => {
-          matches.push(restaurantList.filter(item => item.tags.indexOf(this.tags[0]) > - 1));
-      });
+        this.tags.forEach((tag) => {
+          matches.push(restaurantList.filter(item => item.tags.indexOf(tag) > - 1));
+        });
 
-        const randomPick = matches[Math.floor(Math.random() * matches.length)][0];
-        return randomPick;
+        let randomPick;
+        if (matches.length > 0) {
+          randomPick = matches[Math.floor(Math.random() * matches.length)];
+        }
       }
     }
   }
