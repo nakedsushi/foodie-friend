@@ -1,0 +1,36 @@
+[
+  {
+    "body": "What are you in the mood for?",
+    "subtext": "Select all that apply",
+    "choices": [
+      "tacos",
+      "dumplings",
+      "pasta",
+      "healthy",
+      "vegetarian",
+      "meat",
+      "pizza",
+      "burgers",
+      "tapas",
+      "family style",
+      "small plates"
+    ]
+  },
+  {
+    "body": "What's your budget?",
+    "choices": [
+      "something affordable",
+      "first date fancy but not pretentious",
+      "call me Auntie Moneybags"
+    ]
+  },
+  {
+    "body": "When do you want to eat?",
+    "choices": [
+      "breakfast",
+      "brunch",
+      "lunch",
+      "dinner"
+    ]
+  }
+]
