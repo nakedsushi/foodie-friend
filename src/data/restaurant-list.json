@@ -2,7 +2,8 @@
   {
     "name": "Ah Goo's",
     "hours": ["lunch", "dinner"],
-    "tags": ["dumplings", "family-style", "noodles", "chinese"]
+    "tags": ["dumplings", "family-style", "noodles", "chinese"],
+    "summary": "It's a home-style Taiwanese restaurant that's decent.  My favorite thing there is the green onion bing, which is a carb-bomb but worth it."
   },
   {
     "name": "Mariscos el Faro",

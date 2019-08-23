@@ -29,7 +29,7 @@
         </button>
       </div>
     </div>
-    <div v-if="showAnswer">
+    <div v-if="showAnswer" class="answer">
       <Restaurant :tags="selectedChoices"/>
     </div>
   </div>
@@ -146,5 +146,11 @@
     font-weight: 600;
     padding: 5px 20px;
     border: none;
+  }
+
+  .answer {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    text-align: right;
   }
 </style>

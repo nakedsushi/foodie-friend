@@ -1,14 +1,15 @@
 <template>
-  <div class="restaurant">
-    {{ randomRestaurant.name }}
+  <div class="restaurant speech-bubble">
+    How about <span class="restaurant__name">{{ randomRestaurant.name }}</span>?
+    <br />
+    {{ randomRestaurant.summary }}
   </div>
 </template>
 
 <script>
-//  import restaurantList from '../data/restaurant-list.yaml'
   const axios = require('axios');
   let restaurantList;
-  axios.get('https://jsonplaceholder.typicode.com/todos/1').
+  axios.get('https://raw.githubusercontent.com/nakedsushi/foodie-friend/master/src/data/restaurant-list.json').
   then( function(response) {
     restaurantList = response.data;
   });
@@ -24,7 +25,6 @@
     computed: {
       randomRestaurant() {
         const matches = [];
-        console.log(restaurantList);
         this.tags.forEach(() => {
           matches.push(restaurantList.filter(item => item.tags.indexOf(this.tags[0]) > - 1));
       });
@@ -35,3 +35,9 @@
     }
   }
 </script>
+
+<style>
+  .restaurant__name {
+    font-weight: 600;
+  }
+</style>

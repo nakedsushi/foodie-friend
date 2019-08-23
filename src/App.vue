@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <div class="container" v-if="!hideWelcome">
       <div class="welcome speech-bubble" >
@@ -14,9 +14,9 @@
       <Question />
     </div>
 
-    <p class="home-links">
-      [footer placeholder]
-    </p>
+    <div class="home-links">
+      <a href="/">back</a>
+    </div>
   </div>
 </template>
 
@@ -44,13 +44,29 @@
 </script>
 
 <style>
+  html, body {
+    height: 100%;
+  }
   body {
     font-family: sans-serif;
     line-height: 1.5;
   }
-  .home-links a {
-    margin-right: 1rem;
+  .app {
+    height: 100%;
   }
+  .home-links {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .home-links a, a:visited {
+    text-decoration: none;
+    color: hsl(202, 100%, 85%)
+  }
+
   .container {
     display: grid;
     grid-template-columns: 20%;
