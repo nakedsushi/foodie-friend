@@ -83,6 +83,7 @@
         this.populateState();
       },
       submit: function() {
+        this.$root.$emit('getRestaurant');
         this.showAnswer = true;
         this.showReady = false;
       }

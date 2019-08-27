@@ -1,44 +1,42 @@
 <template>
   <div class="restaurant speech-bubble">
-    <div v-if="randomRestaurant">
+    <div v-if="randomRestaurant && randomRestaurant.name">
       How about <span class="restaurant__name">{{ randomRestaurant.name }}</span>?
       <br />
       {{ randomRestaurant.summary }}
     </div>
+    <div v-else-if="randomRestaurant">
+      Sorry, can't really think of a good place right now.
+    </div>
     <div v-else>
-      Hm...I can't really think of anything off the top of my head.
+      typing...
     </div>
   </div>
 </template>
 
 <script>
   const axios = require('axios');
-  let restaurantList;
-  axios.get('https://raw.githubusercontent.com/nakedsushi/foodie-friend/master/src/data/restaurant-list.json').
-  then( function(response) {
-    restaurantList = response.data;
-  });
 
   export default {
     name: 'Restaurant',
     props: ['tags'],
     data() {
       return {
-        restaurantList
+        randomRestaurant: false
       }
     },
-    computed: {
-      randomRestaurant() {
-        const matches = [];
-        this.tags.forEach((tag) => {
-          matches.push(restaurantList.filter(item => item.tags.indexOf(tag) > - 1));
+    mounted() {
+      const that = this;
+      const tags = encodeURI(this.tags.join(','));
+      axios.get(`https://jhtob6nlmb.execute-api.us-west-2.amazonaws.com/prod/restaurant?tags=${tags}`).
+        then( function(response) {
+          if (response.data.Count > 0) {
+            const restaurantList = response.data.Items;
+            that.randomRestaurant = restaurantList[Math.floor(Math.random() * response.data.Count)];
+          } else {
+            that.randomRestaurant = {};
+          }
         });
-
-        let randomPick;
-        if (matches.length > 0) {
-          randomPick = matches[Math.floor(Math.random() * matches.length)];
-        }
-      }
     }
   }
 </script>
