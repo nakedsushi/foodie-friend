@@ -47,9 +47,18 @@
   html, body {
     height: 100%;
   }
+
+  @media only screen and (min-width: 769px) {
+    body {
+      width: 600px;
+      margin: auto;
+    }
+  }
+
   body {
     font-family: sans-serif;
     line-height: 1.5;
+    margin-top: 20px;
   }
   .app {
     height: 100%;

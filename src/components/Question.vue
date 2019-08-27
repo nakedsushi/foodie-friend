@@ -93,10 +93,16 @@
 
 <style>
   .question {
-    margin: 80px 0;
+    margin: 40px 0;
     grid-column-start: 1;
     grid-column-end: 5;
     display: grid;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .question {
+      margin: 80px 0;
+    }
   }
 
   .question .speech-bubble{
@@ -145,7 +151,7 @@
     background: linear-gradient(to bottom, #00D0EA 10%, #0085D1 100%);
     font-size: 16px;
     font-weight: 600;
-    padding: 5px 20px;
+    padding: 5px 80px;
     border: none;
   }
 
