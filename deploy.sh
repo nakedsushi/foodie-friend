@@ -4,14 +4,11 @@
 set -e
 
 # build
-npm run build
+yarn build
 
 # navigate into the build output directory
 cd dist
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-git push
+aws s3 cp ./ s3://$BUCKET_NAME/ --recursive
 
 cd -
