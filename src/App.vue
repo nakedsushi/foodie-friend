@@ -1,22 +1,16 @@
 <template>
   <div class="app">
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <div class="container" v-if="!hideWelcome">
+    <div class="container">
       <div class="welcome speech-bubble" >
-        Hey, I heard you're looking for a place to eat. I can give you a few suggestions.
+        Hey, I heard you're looking for a place to eat? I can suggest some spots if you help me narrow down what you want.
       </div>
       <div class="friend__img">
-        <img alt="Example image" src="./foodie-friend.png" width="135" />
+        <a href="/"><img alt="tap this image to go back to the beginning" src="/images/foodie-friend.png" width="135" /></a>
       </div>
     </div>
 
-    <div @click="hide">
-      <Question />
-    </div>
-
-    <div class="home-links">
-      <a href="/">back</a>
-    </div>
+    <Question />
   </div>
 </template>
 
@@ -24,21 +18,11 @@
   import Question from './components/Question.vue'
 
   export default {
-    data() {
-      return {
-        hideWelcome: false
-      }
-    },
     metaInfo: {
       title: 'Foodie Friend says hi!'
     },
     components: {
       Question
-    },
-    methods: {
-      hide: function() {
-        this.hideWelcome = true;
-      }
     }
   }
 </script>
@@ -52,25 +36,33 @@
     body {
       width: 600px;
       margin: auto;
+      padding: 20px 0 0 0;
     }
   }
 
   body {
     font-family: sans-serif;
     line-height: 1.5;
-    margin-top: 20px;
-  }
-  .app {
-    height: 100%;
-  }
-  .home-links {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 0 1rem;
   }
 
+  .app {
+    height: 100%;
+    margin: 20px 10px;
+  }
+
+  .home-links {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    background-color: #0096e7;
+  }
+
+  .home__icon {
+    width: 32px;
+  }
   .home-links a, a:visited {
     text-decoration: none;
     color: hsl(202, 100%, 85%)
@@ -79,15 +71,20 @@
   .container {
     display: grid;
     grid-template-columns: 20%;
+    align-items: end;
   }
   .friend__img {
     grid-column-start: 4;
     grid-column-end: 5;
     text-align: right;
   }
+  .friend__img img {
+    width: 72px;
+  }
   .welcome {
     grid-column-start: 1;
     grid-column-end: 4;
+    margin-right: 20px;
   }
 
   .speech-bubble {

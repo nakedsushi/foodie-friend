@@ -1,6 +1,6 @@
 [
   {
-    "body": "Anything specific you're in the mood for?",
+    "body": "Anything sound good?",
     "subtext": "Select all that apply",
     "choices": [
       "tacos",
@@ -32,7 +32,6 @@
     "body": "When do you want to eat?",
     "choices": [
       "breakfast",
-      "brunch",
       "lunch",
       "dinner"
     ]

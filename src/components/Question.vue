@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="send">
+    <div class="send" v-if="!showAnswer">
       <div v-if="lastQuestion">
         <button @click="submit" v-if="showReady" class="bubble button__forward">
           send
@@ -61,7 +61,7 @@
         selectedChoices,
         lastQuestion,
         showAnswer,
-        showReady,
+        showReady
       }
     },
     methods: {
@@ -93,7 +93,7 @@
 
 <style>
   .question {
-    margin: 40px 0;
+    margin: 2px 0;
     grid-column-start: 1;
     grid-column-end: 5;
     display: grid;
@@ -108,6 +108,7 @@
   .question .speech-bubble{
     grid-column-start: 2;
     grid-column-end: 5;
+    margin-top: 20px;
   }
 
   .choice {
@@ -124,12 +125,17 @@
     background-attachment: fixed;
     position: relative;
     border-radius: 20px;
-    padding: 8px 15px;
+    padding: 8px 12px;
     margin: 5px 10px;
     display: inline-block;
   }
   .choice-bubble {
     color: #333333;
+    cursor: pointer;
+  }
+
+  .choice-bubble:hover {
+    background: hsl(0, 0%, 93%);
   }
 
   .checkbox--hidden {
@@ -137,7 +143,7 @@
   }
 
   .checkbox--hidden:checked + .choice-bubble {
-    background-color: hsl(120, 60%, 70%);
+    background-color: hsl(180, 60%, 80%);
   }
 
   .send {
@@ -148,11 +154,13 @@
 
   button.button__forward {
     color: hsl(0, 0%, 99%);
-    background: linear-gradient(to bottom, #00D0EA 10%, #0085D1 100%);
+    background: linear-gradient(to bottom, #00D0EA 10%, #0085D1 70%);
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     padding: 5px 80px;
-    border: none;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
   }
 
   .answer {
