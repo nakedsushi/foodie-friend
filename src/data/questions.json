@@ -3,15 +3,14 @@
     "body": "Anything sound good?",
     "subtext": "Select all that apply",
     "choices": [
-      "tacos",
-      "dumplings",
-      "pasta",
-      "healthy",
-      "vegetarian",
-      "pizza",
-      "burgers",
-      "family-style",
-      "small-plates"
+      "vietnamese",   "vegetarian",
+      "noodles",         "soup",
+      "food-truck",      "mexican",
+      "seafood",        "tacos",
+      "burmese",        "vegan",
+      "rice",    "dumplings",
+      "family-style",      "chinese",
+      "dessert",    "ice-cream"
     ]
   },
   {
