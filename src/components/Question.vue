@@ -21,6 +21,9 @@
       <button @click="nextQuestion" class="bubble button__forward">
         <div>{{ sendOption }}</div>
       </button>
+      <div class="deemphasized" v-if="showBackLink" @click="previousQuestion">
+        go back
+      </div>
     </div>
     <div v-if="showAnswer" class="answer">
       <Restaurant :tags="selectedChoices"/>
@@ -45,13 +48,15 @@
       const lastQuestion = false;
       const showAnswer = false;
       const showReady = true;
+      const showBackLink = false;
       return {
         question,
         questionNumber,
         selectedChoices,
         lastQuestion,
         showAnswer,
-        showReady
+        showReady,
+        showBackLink
       }
     },
     methods: {
@@ -59,6 +64,9 @@
         const questionNumber = store.getters.currentQuestionNumber;
         this.question = questions[questionNumber];
         this.questionNumber = questionNumber;
+        if (store.getters.currentQuestionNumber > 0) {
+          this.showBackLink = true;
+        }
       },
       nextQuestion: function() {
         if (store.getters.currentQuestionNumber === (questions.length - 1)) {
@@ -69,6 +77,10 @@
         } else {
           store.commit('changeQuestion', 1);
         }
+        this.populateState();
+      },
+      previousQuestion: function() {
+        store.commit('changeQuestion', -1);
         this.populateState();
       }
     },
@@ -176,5 +188,11 @@
     grid-column-start: 1;
     grid-column-end: 5;
     text-align: right;
+  }
+
+  .deemphasized {
+    margin-top: 40px;
+    color: hsl(210, 13%, 50%);
+    text-align: center;
   }
 </style>

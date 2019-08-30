@@ -7,7 +7,8 @@
         {{ randomRestaurant.summary }}
       </div>
       <div v-else-if="randomRestaurant">
-        Sorry, can't really think of a good place right now.
+        Sorry, nothing comes to mind with what you want. Maybe you want to <a href="/">start over</a> with
+        some different choices?
       </div>
       <div v-else>
         typing...
@@ -75,6 +76,10 @@
   }
   .restaurant.speech-bubble {
     padding: 15px 20px;
+  }
+
+  .restaurant.speech-bubble a, a:visited {
+    color: hsl(202, 90%, 90%);
   }
   .restaurant__name {
     font-weight: 600;

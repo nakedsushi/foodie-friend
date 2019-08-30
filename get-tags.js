@@ -12,4 +12,4 @@ response.Items.forEach((item) => {
 
 const uniqTags = Array.from(new Set(tags));
 
-console.log(uniqTags.filter(tag => nonTags.indexOf(tag) < 0 ));
+console.log(uniqTags.filter(tag => nonTags.indexOf(tag) < 0 ).sort());

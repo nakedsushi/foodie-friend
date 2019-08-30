@@ -3,16 +3,24 @@
     "body": "What type of food are you in the mood for?",
     "subtext": "Select all that apply",
     "sendOptionDefault": "anything",
-    "sendOptionPicked": "send",
+    "sendOptionPicked": "any of those",
     "choices": [
-      "vietnamese",   "vegetarian",
-      "noodles",         "soup",
-      "food-truck",      "mexican",
-      "seafood",        "tacos",
-      "burmese",        "vegan",
-      "rice",    "dumplings",
-      "family-style",      "chinese",
-      "dessert",    "ice-cream"
+      "burmese",
+      "chinese",
+      "dessert",
+      "dumplings",
+      "family-style",
+      "food-truck",
+      "ice-cream",
+      "mexican",
+      "noodles",
+      "rice",
+      "seafood",
+      "soup",
+      "tacos",
+      "vegan",
+      "vegetarian",
+      "vietnamese"
     ]
   },
   {
