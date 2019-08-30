@@ -1,13 +1,13 @@
 <template>
   <div class="question">
     <div class="speech-bubble">
-      {{ body }}
+      {{ question.body }}
     </div>
 
     <div class="choices--container">
-      <div v-for="choice in choices" class="choice" :key="choice.key">
+      <div v-for="choice in question.choices" class="choice" :key="choice.key">
         <input type="checkbox"
-               :name="choice"
+               :name="choice.key || choice"
                :value="choice.key || choice"
                :id="questionNumber + (choice.key || choice)"
                v-model="selectedChoices"
@@ -18,16 +18,9 @@
     </div>
 
     <div class="send" v-if="!showAnswer">
-      <div v-if="lastQuestion">
-        <button @click="submit" v-if="showReady" class="bubble button__forward">
-          send
-        </button>
-      </div>
-      <div v-else>
-        <button @click="nextQuestion" class="bubble button__forward">
-          send
-        </button>
-      </div>
+      <button @click="nextQuestion" class="bubble button__forward">
+        <div>{{ sendOption }}</div>
+      </button>
     </div>
     <div v-if="showAnswer" class="answer">
       <Restaurant :tags="selectedChoices"/>
@@ -48,15 +41,12 @@
     data () {
       const questionNumber = store.getters.currentQuestionNumber;
       const question = questions[questionNumber];
-      const body = question.body;
-      const choices = question.choices;
       const selectedChoices = [];
       const lastQuestion = false;
       const showAnswer = false;
       const showReady = true;
       return {
-        body,
-        choices,
+        question,
         questionNumber,
         selectedChoices,
         lastQuestion,
@@ -67,25 +57,44 @@
     methods: {
       populateState: function () {
         const questionNumber = store.getters.currentQuestionNumber;
-        this.body = questions[questionNumber].body;
-        this.choices = questions[questionNumber].choices;
+        this.question = questions[questionNumber];
         this.questionNumber = questionNumber;
-        if (questionNumber === (questions.length - 1)) {
-          this.lastQuestion = true;
-        }
       },
       nextQuestion: function() {
-        store.commit('changeQuestion', 1);
+        if (store.getters.currentQuestionNumber === (questions.length - 1)) {
+          // last question
+          this.$root.$emit('getRestaurant');
+          this.showAnswer = true;
+          this.showReady = false;
+        } else {
+          store.commit('changeQuestion', 1);
+        }
         this.populateState();
+      }
+    },
+    computed: {
+      inputType: function() {
+        return this.question.inputType || 'checkbox'
       },
-      previousQuestion: function() {
-        store.commit('changeQuestion', -1);
-        this.populateState();
-      },
-      submit: function() {
-        this.$root.$emit('getRestaurant');
-        this.showAnswer = true;
-        this.showReady = false;
+      sendOption: function() {
+        let picked = false;
+        const question = this.question;
+        this.selectedChoices.forEach(function(p) {
+          question.choices.forEach(function(c) {
+            let choice = c;
+            if (c.key) {
+              choice = c.key;
+            }
+            if (p === choice) {
+              picked = true;
+            }
+          });
+        });
+        if (picked) {
+          return question.sendOptionPicked;
+        } else {
+          return question.sendOptionDefault;
+        }
       }
     }
   }

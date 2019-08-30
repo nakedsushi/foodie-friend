@@ -1,7 +1,9 @@
 [
   {
-    "body": "Anything sound good?",
+    "body": "What type of food are you in the mood for?",
     "subtext": "Select all that apply",
+    "sendOptionDefault": "anything",
+    "sendOptionPicked": "send",
     "choices": [
       "vietnamese",   "vegetarian",
       "noodles",         "soup",
@@ -15,6 +17,8 @@
   },
   {
     "body": "What's your budget?",
+    "sendOptionDefault": "skip",
+    "sendOptionPicked": "send",
     "choices": [
       { "key": "low",
         "text": "Less than a hipster cocktail."
@@ -29,6 +33,8 @@
   },
   {
     "body": "When do you want to eat?",
+    "sendOptionDefault": "anytime",
+    "sendOptionPicked": "send",
     "choices": [
       "breakfast",
       "lunch",

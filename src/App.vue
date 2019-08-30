@@ -3,7 +3,7 @@
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <div class="container">
       <div class="welcome speech-bubble" >
-        Hey, I heard you're looking for a place to eat? I can suggest some spots if you help me narrow down what you want.
+        Hey, I can suggest a place for you to eat if you help me narrow down what you have in mind.
       </div>
       <div class="friend__img">
         <a href="/"><img alt="tap this image to go back to the beginning" src="/images/foodie-friend.png" width="135" /></a>
