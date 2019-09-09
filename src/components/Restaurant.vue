@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="restaurant speech-bubble" v-if="showBye">
-      You're welcome! Let me know if you have any more questions.
+      You're welcome. If you thought I was helpful, spread the word and tell your friends about me!
       <br />
       <a href="/">Do you want to start over?</a>
     </div>
