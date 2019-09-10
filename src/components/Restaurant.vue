@@ -19,7 +19,7 @@
         thanks
       </div>
       <div v-if="showAnswer" class="bubble choice-bubble choice-bubble__another" @click="anotherOne">
-        anywhere else?
+        nah, something else
       </div>
     </div>
     <div class="restaurant speech-bubble" v-if="showBye">
