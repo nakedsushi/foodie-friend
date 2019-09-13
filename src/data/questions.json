@@ -1,6 +1,6 @@
 [
   {
-    "body": "What type of food are you in the mood for? I know there's a lot, but maybe pick one or two.",
+    "body": "What're you in the mood for? Pick a couple of things that look good and I'll think of a place that matches at least one of these.",
     "subtext": "Select all that apply",
     "sendOptionDefault": "anything",
     "sendOptionPicked": "ok I picked",
